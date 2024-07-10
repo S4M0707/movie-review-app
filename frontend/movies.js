@@ -1,17 +1,17 @@
 export default class Movies {
-    #APILINK;
-    #SEARCHAPI;
+    #API_LINK;
+    #API_KEY;
 
     constructor() {
-        this.#APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=41ee980e4b5f05f6693fda00eb7c4fd4&page=1';
-        this.#SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=41ee980e4b5f05f6693fda00eb7c4fd4&query=";
+        this.#API_KEY = process.env.API_KEY;
+        this.#API_LINK = `http://www.omdbapi.com/?i=tt3896198&apikey=${this.#API_KEY}&s=`;
     }
 
     async #returnMovies(url) {
         try {
             const res = await fetch(url);
             const data = await res.json();
-            return data.results;
+            return data.Search;
         } catch (err) {
             console.error(err);
             return [];
@@ -19,7 +19,7 @@ export default class Movies {
     }
 
     searchMovies(item) {
-        const url = item ? this.#SEARCHAPI + item : this.#APILINK;
+        const url = item ? this.#API_LINK + item : this.#API_LINK + 'avengers'
         return this.#returnMovies(url);
     }
 }

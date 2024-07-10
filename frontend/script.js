@@ -1,13 +1,11 @@
 import Movies from './movies.js';
 
 class Render {
-    #IMG_PATH;
     #main;
     #search;
     #movies;
 
     constructor() {
-        this.#IMG_PATH = "https://image.tmdb.org/t/p/w1280";
         this.#main = document.getElementById("main");
         this.#search = document.getElementById("srch");
         this.#movies = new Movies();
@@ -35,8 +33,8 @@ class Render {
         const title = document.createElement('h3');
         title.setAttribute('id', 'title');
 
-        title.innerHTML = `${element.title}`;
-        image.src = this.#IMG_PATH + element.poster_path;
+        title.innerHTML = `${element.Title}`;
+        image.src = element.Poster;
 
         div_card.appendChild(image);
         div_card.appendChild(title);

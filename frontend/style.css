@@ -5,8 +5,8 @@
 }
 
 body {
-    background-color: #131720;
-    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to bottom, #131720, #1a2433);
+    font-family: 'Open Sans', sans-serif;
     color: #fff;
     line-height: 1.6;
 }
@@ -16,8 +16,8 @@ header {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     background-color: #1a2433;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 header a {
@@ -40,12 +40,13 @@ header a:hover {
 
 form {
     background-color: #151f30;
-    height: 3rem;
-    width: 50%;
-    border-radius: 11px;
+    height: 3.5rem;
+    width: 60%;
+    border-radius: 15px;
+    padding: 0 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    padding: 0 10px;
 }
 
 input {
@@ -53,16 +54,18 @@ input {
     border: none;
     outline: none;
     color: #fff;
-    font-size: 15px;
+    font-size: 1.2rem;
+    padding: 10px;
     width: 100%;
 }
 
 main {
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
+
 
 .row {
     display: flex;
@@ -71,31 +74,42 @@ main {
 }
 
 .column {
-    flex: 1 1 300px;
+    flex: 1 1 250px;
     padding: 10px;
+    margin: 10px;
 }
 
+
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #1a2433;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 0 0 20px 0;
+    height: 450px;
 }
 
 .thumbnail {
-    width: 20%;
-    height: auto;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
     border-bottom: 1px solid #151f30;
+    border-radius: 15px 15px 0 0;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 h3 {
-    margin: 10px 0;
+    margin: 15px 0;
     font-size: 1.5rem;
     color: #f39c12;
 }
