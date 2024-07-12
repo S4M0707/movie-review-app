@@ -17,6 +17,7 @@ class Render {
     }
 
     #renderMovie(element) {
+        console.log(element.imdbID, element.Title);
         const div_card = document.createElement('div');
         div_card.setAttribute('class', 'card');
 
@@ -30,10 +31,11 @@ class Render {
         image.setAttribute('class', 'thumbnail');
         image.setAttribute('id', 'image');
 
-        const title = document.createElement('h3');
-        title.setAttribute('id', 'title');
+        const title = document.createElement('a');
+        title.setAttribute('href', `./pages/review.html?id=${element.imdbID}&title=${element.Title}`);
+        title.setAttribute('class', 'title');
 
-        title.innerHTML = `${element.Title}`;
+        title.innerText = `${element.Title}`;
         image.src = element.Poster;
 
         div_card.appendChild(image);

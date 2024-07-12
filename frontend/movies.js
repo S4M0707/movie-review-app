@@ -3,7 +3,7 @@ export default class Movies {
     #API_KEY;
 
     constructor() {
-        this.#API_KEY = process.env.API_KEY;
+        this.#API_KEY = "xyz";
         this.#API_LINK = `http://www.omdbapi.com/?i=tt3896198&apikey=${this.#API_KEY}&s=`;
     }
 

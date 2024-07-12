@@ -18,7 +18,7 @@ export default class Reviews {
 
     static async postMovieReview(req, res, next) {
         try {
-            const movieId = parseInt(req.body.movieId)
+            const movieId = req.body.movieId
             const review = req.body.review
             const user = req.body.user
             console.log('movieid', movieId)

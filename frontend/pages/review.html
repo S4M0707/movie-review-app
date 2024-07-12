@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="./review.css">
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <header>
+        <a class="active" href="../index.html">Movies</a>
+    </header>
+
+    <div id="addContainer">
+        <button id="addReview">Add Review</button>
+    </div>
+
+    <dialog id="formContainer">
+        <form id="addReviewForm">
+            <h2>Review Details</h2>
+            <hr>
+            <label for="userIp">
+                User:
+                <input type="text" required id="userIp" name="userIp" placeholder="Enter your name">
+            </label>
+            <label for="reviewIp">
+                Review:
+                <input type="text" required id="reviewIp" name="reviewIp" placeholder="Write your review">
+            </label>
+            <section class="buttons">
+                <button type="button" id="reviewSubmit" name="reviewSubmit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>plus-thick</title>
+                        <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
+                    </svg>
+                    Add Review
+                </button>
+                <button type="button" id="formCancel" name="formCancel">
+                    Cancel
+                </button>
+            </section>
+        </form>
+    </dialog>
+
+    <main id="main">
+        <h1 id="title"></h1>
+    </main>
+
+    <script src="./review.js"></script>
+</body>
+
+</html>
