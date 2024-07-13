@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node backend/index.js",
-    "frontend": "http-server frontend -p 3004"
+    "frontend": "http-server frontend -p 3000",
+    "dev": "concurrently \"node backend/index.js\" \"http-server frontend -p 3000\""
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,8 @@
     "http-server": "^14.1.1",
     "mongodb": "^4.11.0",
     "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

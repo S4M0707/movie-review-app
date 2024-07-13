@@ -1,23 +1,28 @@
-import Movies from './movies.js';
-
 class Render {
     #main;
     #search;
-    #movies;
+    #APILINK;
 
     constructor() {
         this.#main = document.getElementById("main");
         this.#search = document.getElementById("srch");
-        this.#movies = new Movies();
+        this.#APILINK = 'http://localhost:8000/api/v1/reviews/movies/';
 
-        // Fetch and render initial movies
-        this.#movies.searchMovies("").then(data => {
+        this.fetchMovies("avengers");
+    }
+
+    async fetchMovies(title) {
+        try {
+            const response = await fetch(this.#APILINK + encodeURIComponent(title));
+            const data = await response.json();
             this.#renderMovies(data);
-        });
+        }
+        catch (e) {
+            console.log(`api, ${e}`);
+        }
     }
 
     #renderMovie(element) {
-        console.log(element.imdbID, element.Title);
         const div_card = document.createElement('div');
         div_card.setAttribute('class', 'card');
 
@@ -58,9 +63,7 @@ class Render {
             const searchItem = this.#search.value.trim();
 
             if (searchItem) {
-                this.#movies.searchMovies(searchItem).then(data => {
-                    this.#renderMovies(data);
-                });
+                this.fetchMovies(searchItem);
                 this.#search.value = "";
             }
         });
